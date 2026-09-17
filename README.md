@@ -19,8 +19,6 @@ All paths below are relative to `code/`.
 
 Each file also runs standalone (`python3 <file>.py`) with its own minimal calibration dictionary, for isolated testing — `main_tank_robots.py`'s `PARAMS` dictionary is the authoritative calibration for the paper's results; the dictionaries in the other two files' `if __name__ == "__main__":` blocks are for standalone checks only and are not the source of truth.
 
-Legacy MATLAB/Octave and Dynare files (`ss_robots.m`, `calibrate_export.m`, `main_robots.m`, `tank_robots.mod`) are kept elsewhere as reference only; the Python files above are the current computational stack.
-
 ## Requirements
 
 ```
