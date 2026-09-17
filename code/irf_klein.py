@@ -257,31 +257,26 @@ def run_regime(base_params, overrides=None, x0=None, shock_index=None, T=40):
 if __name__ == "__main__":
 
     params = dict(
-        beta=0.99, gamma=0.75, phi=1/0.621,
-        alpha=0.30,      # capital income share, outer nest (NOT the old upper-nest elasticity)
-        sigma_X=0.90,     # upper-nest elasticity (renamed from the old 'alpha')
+        beta=0.99, gamma=0.75, phi=1/0.621, # intertemporal discount, relative risk aversion, and labor elasticity 
+        alpha=0.30,      # capital income share, outer nest 
+        sigma_X=0.90,     # upper-nest elasticity  
         sigma_L=10,     # lower-nest elasticity
-        delta_k=0.025, delta_z=0.075,
+        delta_k=0.025, delta_z=0.04, # traditional & robotic capital depreciation
         mu=0.24, lam=0.24,           # lambda_S = lambda_U = lam  =>  n_S = 1-mu, n_U = mu 0.24
-        omega=9.0,        # free level parameter, not targeted
-        eps_p=6.0, theta_p=0.75, zeta_p=0.0,
-        p_Z_bar=1.0,      # normalisation
-        A=1.0,
-        prem_target=1.7,
-        rshare_target=0.10,
-        # --- dynamics-only: inoperative at the steady state (S_j(1)=S_j'(1)=0,
-        #     AR coefficients don't enter any residual above), but required by
-        #     irf_klein.py's linear system. Kept here rather than duplicated,
-        #     so there is still one calibration dict, not two. ---
+        omega=9.0,       # labor disutility weight  
+        eps_p=6.0, theta_p=0.75, zeta_p=0.0, 
+        p_Z_bar=1.0,      # robots relative price 
+        A=1.0,           # total factor productivity
+        prem_target=1.7, # fixed skill premium
         tau_K=6.962,     # Smets-Wouters (2003) euro-area posterior mean, adjustment cost curvature
-        tau_Z=6.962,     # same curvature applied to robotic investment (symmetric, per memory)
-        rho_p=0.90,      # persistence, p^Z process — placeholder, confirm value
+        tau_Z=6.962,     # same curvature applied to robotic investment  
+        rho_p=0.90,      # persistence, p^Z process     
         rho_A=0.90,      # persistence, TFP process
         sigma_p=0.01,    # s.d., p^Z innovation — placeholder, confirm value
         sd_eps_a=0.01,   # s.d., TFP innovation
         sd_eps_r=0.01,   # s.d., monetary innovation
-        phi_pi=1.5,
-        phi_x=0.125,
+        phi_pi=1.5,      # inflation weight in monetary policy
+        phi_x=0.125,     # output gap weight in monetary policy
         rho_R=0.8    # Monetary policy lag (Smets-Wouters 2003 = 0.956)
     )
     out = run_regime(base_params=params)
