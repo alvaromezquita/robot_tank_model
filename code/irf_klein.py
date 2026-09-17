@@ -277,7 +277,8 @@ if __name__ == "__main__":
         sd_eps_r=0.01,   # s.d., monetary innovation
         phi_pi=1.5,      # inflation weight in monetary policy
         phi_x=0.125,     # output gap weight in monetary policy
-        rho_R=0.8    # Monetary policy lag (Smets-Wouters 2003 = 0.956)
+        rho_R=0.8,    # Monetary policy lag (Smets-Wouters 2003 = 0.956)
+        rshare_target = 0.1 # baseline robotic regime
     )
     out = run_regime(base_params=params)
     paths = out['paths']
