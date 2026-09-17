@@ -59,7 +59,7 @@ PARAMS = dict(
     alpha=0.30,      # capital income share, outer nest (NOT the old upper-nest elasticity)
     sigma_X=0.90,     # upper-nest elasticity (renamed from the old 'alpha')
     sigma_L=10,     # lower-nest elasticity
-    delta_k=0.025, delta_z=0.075,
+    delta_k=0.025, delta_z=0.04,
     mu=0.24, lam=0.24,           # lambda_S = lambda_U = lam  =>  n_S = 1-mu, n_U = mu 0.24
     omega=9.0,        # free level parameter, not targeted
     eps_p=6.0, theta_p=0.75, zeta_p=0.0,
